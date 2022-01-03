@@ -69,7 +69,7 @@ def create_model(num_neurons, learning_rate, momentum):
     outputs = tf.keras.layers.Dense(num_classes)(x)
     model = tf.keras.Model(inputs, outputs)
     model.compile(
-        loss='binary_crossentropy',
+        loss='categorical_crossentropy',
         optimizer=tf.keras.optimizers.SGD(learning_rate=learning_rate, momentum=momentum),
         metrics=['accuracy'])
     return model
